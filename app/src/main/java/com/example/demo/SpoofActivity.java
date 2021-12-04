@@ -50,6 +50,7 @@ public class SpoofActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_spoof_click:
+                //随机移动到屏幕上的一个坐标
                 float x = new Random().nextInt(sWinWidth - v.getWidth());
                 float y = new Random().nextInt(sWinHeight - v.getHeight());
                 v.setX(x);

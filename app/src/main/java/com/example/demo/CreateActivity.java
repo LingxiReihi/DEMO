@@ -14,27 +14,32 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class CreateActivity extends AppCompatActivity implements View.OnClickListener {
-    
+
+    //链接上一个页面的方法
     public static void startActivity(Context context){
         Intent intent = new Intent(context,CreateActivity.class);
         context.startActivity(intent);
     }
 
+    //创建好需要使用的对象
     protected ImageView cIvBackground;
     protected EditText cEtUsername, cEtPass1, cEtPass2;
     protected Button cBtnNext, cBtnCancel;
     protected SharedPreferences sharedPreferences;
     protected SharedPreferences.Editor editor;
 
+    //页面初始化（自带方法）
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
         initView();
+        //设置监听
         cBtnNext.setOnClickListener(this);
         cBtnCancel.setOnClickListener(this);
     }
 
+    //初始化
     private void initView() {
         cIvBackground = findViewById(R.id.iv_create_background);
         cEtUsername = findViewById(R.id.et_create_username);
@@ -42,14 +47,17 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         cEtPass2 = findViewById(R.id.et_create_password2);
         cBtnNext = findViewById(R.id.btn_create_next);
         cBtnCancel = findViewById(R.id.btn_create_cancel);
+        //设置数据储存位置为date
         sharedPreferences = getSharedPreferences("date", MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
 
+    //点击事件
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_create_next:
+                //获取输入值，并将输入值传入create方法
                 String username = cEtUsername.getText().toString();
                 String password1 = cEtPass1.getText().toString();
                 String password2 = cEtPass2.getText().toString();
@@ -62,7 +70,9 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    //注册账号方法
     private void create(String username, String password1, String password2) {
+        //正确值判断
         if (password1.equals(password2)) {
             editor.remove("username");
             editor.remove("password");
@@ -76,6 +86,7 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    //取消，返回上一界面
     private void returnMain(){
         MainActivity.startActivity(this);
     }

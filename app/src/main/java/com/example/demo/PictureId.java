@@ -1,5 +1,7 @@
 package com.example.demo;
 
+
+//这只是我闲着没事写来储存图片id的一个类。。。
 public class PictureId {
     int[] pictureId = new int[27];
 

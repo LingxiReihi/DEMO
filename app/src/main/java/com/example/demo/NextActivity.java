@@ -31,6 +31,7 @@ public class NextActivity extends AppCompatActivity implements View.OnClickListe
         nButton = findViewById(R.id.btn_next_next);
     }
 
+    //现在没用，不代表以后没用（狗头）
     private String mUserName;
     private String mPassword;
 
@@ -38,6 +39,7 @@ public class NextActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
+        //获得上一页面输入的数据
         Intent intent = getIntent();
         mUserName = intent.getStringExtra(INTENT_USER_NAME);
         mPassword = intent.getStringExtra(INTENT_PASSWORD);
@@ -50,6 +52,7 @@ public class NextActivity extends AppCompatActivity implements View.OnClickListe
         LvChoose_Activity.startActivity(this);
     }
 
+    //设置点击事件
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_next_next) {

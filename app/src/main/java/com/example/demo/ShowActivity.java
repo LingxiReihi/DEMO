@@ -33,12 +33,14 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         sBtnNext.setOnClickListener(this);
         sBtnLast.setOnClickListener(this);
+        //隐藏最顶上那个那啥（忘名字了）
         startService(intent);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
     }
 
+    //目测是音乐暂停的方法
     public void onStop() {
         Intent intent = new Intent(ShowActivity.this, MusicServer.class);
         stopService(intent);
@@ -52,7 +54,7 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
         sTvPic = findViewById(R.id.tv_show_picNum);
     }
 
-
+    //点击事件
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -65,11 +67,14 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //修改图片id达到切换图片的效果（不要问我@SuppressLint（）是啥意思，他爆黄我才加的。。。
+
     @SuppressLint("SetTextI18n")
     private void last() {
         if (i == 1) {
             Toast.makeText(this, "已经是第一张了", Toast.LENGTH_SHORT).show();
         } else {
+            //更改图片的同时顺便更改一下屏幕下方显示的数字
             i -= 1;
             sIvPicture.setImageResource(pictureId.getPictureId(i));
             sTvPic.setText(Integer.toString(i));

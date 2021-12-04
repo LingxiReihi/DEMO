@@ -32,6 +32,11 @@ public class MusicServer extends Service {
             mediaPlayer.setLooping(true);
             mediaPlayer.start();
         }
-    }
+    }//划线是因为这种方法已经过时了（但我只在网上找到了这个方法。。。）
 
 }
+
+/**
+ * 这上面为音乐播放的一个方法，还没了解透彻。。。
+ * 但想要设置音乐播放直接照搬也可以
+ */

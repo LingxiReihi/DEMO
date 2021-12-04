@@ -20,6 +20,7 @@ public class LvChoose_Activity extends AppCompatActivity implements View.OnClick
         context.startActivity(intent);
     }
 
+    //初始化
     private void initView() {
         lBtnSpoof = findViewById(R.id.btn_lvChoose_spoof);
         lBtnNext = findViewById(R.id.btn_lvChoose_next);
@@ -31,10 +32,12 @@ public class LvChoose_Activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lv_choose);
         initView();
+        //设置监听
         lBtnNext.setOnClickListener(this);
         lBtnSpoof.setOnClickListener(this);
     }
 
+    //点击事件
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -46,6 +49,8 @@ public class LvChoose_Activity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+
+    //这两个方法没写好（名字）。。。
 
     private void nextActivity() {
         Toast.makeText(this, "进入恶搞界面", Toast.LENGTH_SHORT).show();
