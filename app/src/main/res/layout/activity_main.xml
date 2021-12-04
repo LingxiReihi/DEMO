@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_content_background" />
+
+    <ImageView
+        android:id="@+id/img_main_head"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/et_main_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_main_head1"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <EditText
+        android:id="@+id/et_main_username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/et_main_password"
+        android:layout_centerHorizontal="true"
+        android:autofillHints="AUTOFILL_HINT_USERNAME"
+        android:drawableStart="@drawable/ic_baseline_account_box_24"
+        android:hint="@string/login_username"
+        android:inputType="text"
+        android:lines="1"
+        android:minHeight="48dp"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/et_main_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?!=+-_.,"
+        android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+        android:hint="@string/login_userPassword"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:minHeight="48dp"
+        android:autofillHints="AUTOFILL_HINT_PASSWORD" />
+
+    <Button
+        android:id="@+id/btn_main_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_main_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/login_login"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btn_main_create"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_main_login"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login_create"
+        tools:ignore="TextContrastCheck" />
+
+    <CheckBox
+        android:id="@+id/ck_main_remember"
+        android:layout_width="309dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="288dp"
+        android:text="@string/remember" />
+
+
+</RelativeLayout>

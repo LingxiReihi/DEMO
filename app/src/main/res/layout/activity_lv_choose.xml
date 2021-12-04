@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LvChoose_Activity">
+
+    <ImageView
+        android:id="@+id/iv_lvChoose_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_main_background"
+        android:contentDescription="@string/head" />
+
+    <Button
+        android:id="@+id/btn_lvChoose_spoof"
+        android:layout_width="192dp"
+        android:layout_height="95dp"
+        android:text="@string/spoof"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_lvChoose_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_lvChoose_background"
+        app:layout_constraintVertical_bias="0.401"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_lvChoose_next"
+        android:layout_width="197dp"
+        android:layout_height="82dp"
+        android:text="@string/next"
+        app:layout_constraintEnd_toEndOf="@+id/btn_lvChoose_spoof"
+        app:layout_constraintStart_toStartOf="@+id/btn_lvChoose_spoof"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lvChoose_spoof"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
