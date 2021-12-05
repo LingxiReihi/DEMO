@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class LvChoose_Activity extends AppCompatActivity implements View.OnClickListener {
 
-    protected Button lBtnSpoof, lBtnNext;
+    protected Button lBtnSpoof, lBtnNext,lBtnTest;
     protected ImageView lIvBackground;
 
     public static void startActivity(Context context) {
@@ -25,6 +25,7 @@ public class LvChoose_Activity extends AppCompatActivity implements View.OnClick
         lBtnSpoof = findViewById(R.id.btn_lvChoose_spoof);
         lBtnNext = findViewById(R.id.btn_lvChoose_next);
         lIvBackground = findViewById(R.id.iv_lvChoose_background);
+        lBtnTest = findViewById(R.id.btn_lvChoose_test);
     }
 
     @Override
@@ -35,6 +36,7 @@ public class LvChoose_Activity extends AppCompatActivity implements View.OnClick
         //设置监听
         lBtnNext.setOnClickListener(this);
         lBtnSpoof.setOnClickListener(this);
+        lBtnTest.setOnClickListener(this);
     }
 
     //点击事件
@@ -46,6 +48,9 @@ public class LvChoose_Activity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.btn_lvChoose_spoof:
                 nextActivity();
+                break;
+            case R.id.btn_lvChoose_test:
+                Test();
                 break;
         }
     }
@@ -60,5 +65,9 @@ public class LvChoose_Activity extends AppCompatActivity implements View.OnClick
     private void next(){
         Toast.makeText(this,"进入下一页",Toast.LENGTH_SHORT).show();
         ShowActivity.startActivity(this);
+    }
+
+    public void Test(){
+        RecyclerActivity.startActivity(this);
     }
 }

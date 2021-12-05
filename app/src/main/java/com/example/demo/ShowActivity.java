@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -33,8 +35,8 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         sBtnNext.setOnClickListener(this);
         sBtnLast.setOnClickListener(this);
-        //隐藏最顶上那个那啥（忘名字了）
         startService(intent);
+        //隐藏最顶上那个那啥（忘名字了）
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -91,4 +93,13 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
             sTvPic.setText(Integer.toString(i));
         }
     }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode==KeyEvent.KEYCODE_BACK){
+            LvChoose_Activity.startActivity(this);
+            Toast.makeText(this, "返回上一级", Toast.LENGTH_SHORT).show();
+        }
+        return super.onKeyDown(keyCode,event);
+    }
+
 }

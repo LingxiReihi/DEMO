@@ -22,7 +22,14 @@ public class MusicServer extends Service {
 
     }
 
-    @Override
+    public int onStartCommand(Intent intent,int flags,int startId){
+        mediaPlayer =MediaPlayer.create(this,R.raw.alicegoodnight);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+        return START_STICKY;
+    }
+
+    /*@Override
     @Deprecated
     public void onStart(Intent intent, int startId) {
         // TODO Auto-generated method stub
@@ -32,7 +39,9 @@ public class MusicServer extends Service {
             mediaPlayer.setLooping(true);
             mediaPlayer.start();
         }
-    }//划线是因为这种方法已经过时了（但我只在网上找到了这个方法。。。）
+    }*/
+
+    //划线是因为这种方法已经过时了（但我只在网上找到了这个方法。。。）
 
 }
 
